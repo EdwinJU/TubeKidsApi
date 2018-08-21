@@ -8,7 +8,10 @@ var VideoSchema = Schema({
     name: String,
 	IsFromYoutube: Boolean,
 	url_youtube: String,
-    file: String
+    file: String,
+    playlist: {type: Schema.ObjectId, ref: 'Playlist'},
+    playlistGe: {type: Schema.ObjectId, ref: 'Playlist'}
+
 });
 
 module.exports = mongoose.model('Video', VideoSchema);
